@@ -17,5 +17,12 @@ describe('Thermostat', function () {
     });
   });
 
+  describe('reduces degrees', function() {
+    it('reduces the temperature', function (){
+      thermostat.decrease(5)
+      expect(thermostat.degrees).toEqual(15);
+    });
+  });
+
 
 });

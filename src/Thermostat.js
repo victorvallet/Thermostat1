@@ -6,4 +6,8 @@ class Thermostat {
   increase(num) {
     this.degrees += num;
   }
+
+  decrease(num) {
+    this.degrees -= num;
+  }
 };
