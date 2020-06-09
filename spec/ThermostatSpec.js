@@ -24,5 +24,10 @@ describe('Thermostat', function () {
     });
   });
 
-
+  describe('minimum degrees', function(){
+    it('raise an error if decreasing temperature under the minimum', function() {
+      expect(function(){thermostat.decrease(15)
+    }).toThrowError('you reached the minimum temperature');
+    });
+  });
 });

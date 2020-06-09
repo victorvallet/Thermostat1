@@ -8,6 +8,10 @@ class Thermostat {
   }
 
   decrease(num) {
+    if ((this.degrees - num) < 10) {
+      this.degrees = 10
+      throw new Error('you reached the minimum temperature')
+    }
     this.degrees -= num;
   }
 };
