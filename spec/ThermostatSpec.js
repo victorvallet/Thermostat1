@@ -34,22 +34,30 @@ describe('Thermostat', function () {
 
   describe('set a maximum temperature of 25 if power saving on', function () {
     it('set a max temperature of 25 if power saving on', function () {
-      thermostat.isSavingMode(true)
+      thermostat._isSavingMode(true)
       expect(thermostat.max).toEqual(25)
     });
   });
 
   describe('set max temperature to 32 if power saving off', function () {
     it('sets the max to 32 is power saving off', function () {
-      thermostat.isSavingMode(false)
+      thermostat._isSavingMode(false)
       expect(thermostat.max).toEqual(32)
     });
   });
 
   describe('set a maximum temperature of 25 if power saving on', function () {
     it('has true as default for isSavingMode', function () {
-      thermostat.isSavingMode()
+      thermostat._isSavingMode()
       expect(thermostat.max).toEqual(25)
+    });
+  });
+
+  describe('reset the temperature to 20 degrees', function () {
+    it('has a function to reset the degrees to 20', function() {
+      thermostat.decrease(7)
+      thermostat.resetDegrees()
+      expect(thermostat.degrees).toEqual(20)
     });
   });
 });

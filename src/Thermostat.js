@@ -17,13 +17,18 @@ class Thermostat {
     this.degrees -= num;
   }
 
-  isSavingMode(boolean = true) {
+  resetDegrees() {
+    this.degrees = 20
+  }
+
+  _isSavingMode(boolean = true) {
     if (boolean) {
       this.max = 25;
     }
     else {
       this.max = 32;
     }
-
   }
+
+
 };
