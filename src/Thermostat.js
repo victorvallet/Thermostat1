@@ -1,6 +1,8 @@
 class Thermostat {
   constructor() {
     this.degrees = 20
+    this.max = null
+    this.min = 10
   }
 
   increase(num) {
@@ -8,10 +10,20 @@ class Thermostat {
   }
 
   decrease(num) {
-    if ((this.degrees - num) < 10) {
-      this.degrees = 10
+    if ((this.degrees - num) < this.min) {
+      this.degrees = this.min
       throw new Error('you reached the minimum temperature')
     }
     this.degrees -= num;
+  }
+
+  isSavingMode(boolean) {
+    if (boolean) {
+      this.max = 25;
+    }
+    else {
+      this.max = 32;
+    }
+
   }
 };
