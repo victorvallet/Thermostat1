@@ -17,7 +17,7 @@ class Thermostat {
     this.degrees -= num;
   }
 
-  isSavingMode(boolean) {
+  isSavingMode(boolean = true) {
     if (boolean) {
       this.max = 25;
     }

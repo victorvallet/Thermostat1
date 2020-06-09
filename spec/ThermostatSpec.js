@@ -45,4 +45,11 @@ describe('Thermostat', function () {
       expect(thermostat.max).toEqual(32)
     });
   });
+
+  describe('set a maximum temperature of 25 if power saving on', function () {
+    it('has true as default for isSavingMode', function () {
+      thermostat.isSavingMode()
+      expect(thermostat.max).toEqual(25)
+    });
+  });
 });
