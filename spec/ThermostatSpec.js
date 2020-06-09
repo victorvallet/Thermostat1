@@ -54,10 +54,24 @@ describe('Thermostat', function () {
   });
 
   describe('reset the temperature to 20 degrees', function () {
-    it('has a function to reset the degrees to 20', function() {
+    it('has a function to reset the degrees to 20', function () {
       thermostat.decrease(7)
       thermostat.resetDegrees()
       expect(thermostat.degrees).toEqual(20)
+    });
+  });
+
+  describe('asking the current usage', function () {
+    it('should return low-usage if degrees < 18', function () {
+      thermostat.decrease(3)
+      expect(thermostat.currentUsage()).toEqual('low-usage')
+    });
+    it('should return medium-usage if degrees < 25 and > 18', function () {
+      expect(thermostat.currentUsage()).toEqual('medium-usage')
+    });
+    it('should return high-usage if degrees > 25', function () {
+      thermostat.increase(6)
+      expect(thermostat.currentUsage()).toEqual('high-usage')
     });
   });
 });
