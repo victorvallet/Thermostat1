@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#display_req_city").text('London')
 
     function CurrentTemp() {
-        $("#output").text(thermostat.degrees)
+        $("#output").text(thermostat.degrees + ' °C')
     };
 
     function CurrentUsage() {
