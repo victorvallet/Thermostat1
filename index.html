@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+    <script src="./src/Thermostat.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="./src/index.js"></script>
+
+    <div>
+        <h1>Thermostat</h1>
+    </div>
+
+    <div>
+        <button id="up">Increase</button>
+        <button id="down">Decrease</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    <div>
+        <button>Power saving mode</button>
+    </div>
+
+    <div>
+        <p class="thermostat-color">Current temperature:</p>
+    </div>
+
+
+</body>
+
+<style>
+    button#down {
+        background-color: blue;
+        color: white;
+    }
+
+    button#up {
+        background-color: red;
+        color: white;
+    }
+
+    button#reset {
+        background-color: green;
+        color: white;
+    }
+
+    button:hover {
+        background-color: yellow;
+        color: white;
+    }
+
+    .thermostat-color {
+        color: red;
+    }
+</style>
+
+</html>
