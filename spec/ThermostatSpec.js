@@ -12,8 +12,9 @@ describe('Thermostat', function () {
 
   describe('increase degrees', function () {
     it('increases the temperature', function () {
-      thermostat.increase(15)
-      expect(thermostat.degrees).toEqual(35);
+      thermostat.savingModeOff();
+      thermostat.increase(10)
+      expect(thermostat.degrees).toEqual(30);
     });
   });
 
@@ -34,21 +35,20 @@ describe('Thermostat', function () {
 
   describe('set a maximum temperature of 25 if power saving on', function () {
     it('set a max temperature of 25 if power saving on', function () {
-      thermostat._isSavingMode(true)
+      thermostat.savingModeOn();
       expect(thermostat.max).toEqual(25)
     });
   });
 
   describe('set max temperature to 32 if power saving off', function () {
     it('sets the max to 32 is power saving off', function () {
-      thermostat._isSavingMode(false)
+      thermostat.savingModeOff();
       expect(thermostat.max).toEqual(32)
     });
   });
 
   describe('set a maximum temperature of 25 if power saving on', function () {
     it('has true as default for isSavingMode', function () {
-      thermostat._isSavingMode()
       expect(thermostat.max).toEqual(25)
     });
   });
@@ -70,6 +70,7 @@ describe('Thermostat', function () {
       expect(thermostat.currentUsage()).toEqual('medium-usage')
     });
     it('should return high-usage if degrees > 25', function () {
+      thermostat.savingModeOff();
       thermostat.increase(6)
       expect(thermostat.currentUsage()).toEqual('high-usage')
     });

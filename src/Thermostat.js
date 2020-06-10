@@ -1,11 +1,16 @@
 class Thermostat {
   constructor() {
     this.degrees = 20
-    this.max = null
+    this.max = 25
     this.min = 10
+    this.savingMode = true;
   }
 
   increase(num) {
+    if ((this.degrees + num) > this.max) {
+      this.degrees = this.max
+      throw new Error('you reached the maximum temperature')
+    }
     this.degrees += num;
   }
 
@@ -33,14 +38,28 @@ class Thermostat {
     }
   }
 
-  _isSavingMode(boolean = true) {
-    if (boolean) {
-      this.max = 25;
-    }
-    else {
-      this.max = 32;
-    }
+  savingModeOn() {
+    this.max = 25;
+    this.savingMode = true;
+  }
+
+  savingModeOff() {
+    this.max = 32;
+    this.savingMode = false;
   }
 
 
+  // _isSavingMode(boolean = true) {
+  //   if (boolean) {
+  //     this.max = 25;
+  //   }
+  //   else {
+  //     this.max = 32;
+  //   }
+  // }
+
 };
+
+
+// _isSavingMode()
+// if this.sAVI
