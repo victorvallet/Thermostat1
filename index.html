@@ -8,45 +8,55 @@
 </head>
 
 <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="./src/Thermostat.js"></script>
     <script src="jquery-3.5.1.min.js"></script>
     <script src="./src/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <div>
+    <div class="container center-align">
         <h1>Thermostat</h1>
-    </div>
 
-    <div>
-        <button id="up">Increase</button>
-        <button id="down">Decrease</button>
-        <button id="reset">Reset</button>
-    </div>
+        <div class="card-panel hoverable">
 
-    <div>
-        <button id="saving_mode_on">Power saving mode on</button>
-        <button id="saving_mode_off">Power saving mode off</button>
-    </div>
 
-    <div>
-        <p id="current_temp">Current temperature: <span id="output" style="font-weight: 600;"></span></p>
-    </div>
+            <div>
+                <button id="up" class="btn-floating"><i class="material-icons">add</i></button>
+                <button id="reset" class="btn-floating"><i class="material-icons">refresh</i></button>
+                <button id="down" class="btn-floating"><i class="material-icons">remove</i></button>
 
-    <div>
-        <p>Current Usage: <span id="usage"></span></p>
-    </div>
+            </div>
 
-    <div>
-        <input type="text" id="req_city_weather" placeholder="City">
-        <button id="req_weather">Submit</button>
-        <p>Current Weather in <span id="display_req_city"></span>: <span id="weather"></span></p>
+            <div style="margin-top: 15px;">
+                <button id="saving_mode_on" class="btn">Power saving mode on</button>
+                <button id="saving_mode_off" class="btn">Power saving mode off</button>
+            </div>
+
+            <div>
+                <h2 id="output" class=""></h2>
+            </div>
+
+            <div>
+                <p>Current Usage: <span id="usage"></span></p>
+            </div>
+        </div>
+
+        <div>
+            <input type="text" id="req_city_weather" placeholder="City" style="width:40%;">
+            <button id="req_weather" class="btn" style="margin-left:5px;">Get temperature</button>
+            <p>Current Weather in <span id="display_req_city" style="font-weight:600;"></span>: <span
+                    id="weather"></span>
+            </p>
+        </div>
     </div>
 
 
 </body>
 
 <style>
-    button#down {
+    /* button#down {
         background-color: blue;
         color: white;
     }
@@ -59,12 +69,8 @@
     button#reset {
         background-color: green;
         color: white;
-    }
+    } */
 
-    button:hover {
-        background-color: yellow;
-        color: white;
-    }
 
     .low-usage {
         color: green

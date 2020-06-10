@@ -14,15 +14,15 @@ $(document).ready(function () {
     };
 
     function getWeather(city = 'London') {
-      $.ajax({
-          url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=19a17be383b02e5fa272e0b4a6b29f5a`,
-          contentType: "application/json",
-          dataType: 'jsonp',
-          success: function (result) {
-              $("#weather").text(result['weather'][0]['description'])
-          }
-      });
-      
+        $.ajax({
+            url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=19a17be383b02e5fa272e0b4a6b29f5a`,
+            contentType: "application/json",
+            dataType: 'jsonp',
+            success: function (result) {
+                $("#weather").text(result['weather'][0]['description'])
+            }
+        });
+
     }
 
     CurrentTemp();
@@ -30,7 +30,7 @@ $(document).ready(function () {
     getWeather();
 
     $("#up").click(function (event) {
-        thermostat.increase(5);
+        thermostat.increase(1);
         console.log(thermostat.degrees);
         event.preventDefault();
         CurrentTemp();
@@ -39,7 +39,7 @@ $(document).ready(function () {
     });
 
     $("#down").click(function (event) {
-        thermostat.decrease(5);
+        thermostat.decrease(1);
         console.log(thermostat.degrees);
         event.preventDefault();
         CurrentTemp();
@@ -75,9 +75,9 @@ $(document).ready(function () {
     });
 
     $("#req_weather").click(function (event) {
-      var str = $("#req_city_weather").val();
-      $("#display_req_city").text(str)
-      getWeather(str);
+        var str = $("#req_city_weather").val();
+        $("#display_req_city").text(str)
+        getWeather(str);
     });
 
 });
