@@ -29,7 +29,11 @@
     </div>
 
     <div>
-        <p id="current_temp" class="thermostat-color">Current temperature:</p>
+        <p id="current_temp">Current temperature: <span id="output" style="font-weight: 600;"></span></p>
+    </div>
+
+    <div>
+        <p>Current Usage: <span id="usage"></span></p>
     </div>
 
 
@@ -56,8 +60,16 @@
         color: white;
     }
 
-    .thermostat-color {
-        color: red;
+    .low-usage {
+        color: green
+    }
+
+    .medium-usage {
+        color: black
+    }
+
+    .high-usage {
+        color: red
     }
 </style>
 
