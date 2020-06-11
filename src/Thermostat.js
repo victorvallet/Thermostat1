@@ -9,6 +9,7 @@ class Thermostat {
   increase(num) {
     if ((this.degrees + num) > this.max) {
       this.degrees = this.max
+      alert("You reached the maximum temperature, turn off the power saving mode !")
       throw new Error('you reached the maximum temperature')
     }
     this.degrees += num;
@@ -17,7 +18,9 @@ class Thermostat {
   decrease(num) {
     if ((this.degrees - num) < this.min) {
       this.degrees = this.min
+      alert("You reached the minimum temperature !")
       throw new Error('you reached the minimum temperature')
+
     }
     this.degrees -= num;
   }
